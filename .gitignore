@@ -7,6 +7,7 @@ build/
 ios/Flutter/Generated.xcconfig
 ios/Flutter/flutter_export_environment.sh
 lib/generated_plugin_registrant.dart
+/quiz_student/lib/firebase_options.dart
 
 # IDE
 .idea/
