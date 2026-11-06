@@ -1,0 +1,139 @@
+Recommended Firebase result storage
+=================================
+
+Goal
+----
+Store quiz results so that:
+1. each student can only read their own results
+2. admins can read all results
+3. result lists are easy to query
+
+
+Recommended structure
+---------------------
+Collection: users
+  Document: {uid}
+    Fields:
+      name
+      email
+      createdAt
+
+    Subcollection: attemptedQuizzes
+      Document: {attemptId}
+        Fields:
+          quizCode
+          quizTitle
+          score
+          totalQuestions
+          percentage
+          startedAt
+          submittedAt
+          selectedAnswers   // list<int>
+          correctAnswers    // optional, usually better for admin only
+
+
+Optional admin-friendly structure
+---------------------------------
+If you want admins to query results by quiz very quickly, also store a copy here:
+
+Collection: quizAttempts
+  Document: {attemptId}
+    Fields:
+      userId
+      userEmail
+      quizCode
+      quizTitle
+      score
+      totalQuestions
+      percentage
+      startedAt
+      submittedAt
+      selectedAnswers
+
+This is a denormalized copy. It makes admin dashboards easier.
+
+
+Why this works well
+-------------------
+students path:
+  users/{uid}/attemptedQuizzes/{attemptId}
+
+benefits:
+  - a student can query only their own attempts
+  - security rules are simple
+  - history screen becomes easy to build
+
+
+Security rules idea
+-------------------
+Only the logged-in user should read their own attempts.
+Admins should read everything.
+
+Example rule idea:
+
+match /users/{userId} {
+  allow read, write: if request.auth != null && request.auth.uid == userId;
+
+  match /attemptedQuizzes/{attemptId} {
+    allow read, write: if request.auth != null && request.auth.uid == userId;
+  }
+}
+
+If you store admin copies:
+
+match /quizAttempts/{attemptId} {
+  allow read: if request.auth != null && request.auth.token.admin == true;
+  allow write: if request.auth != null;
+}
+
+Note:
+admin claim must be assigned from Firebase Admin SDK or Cloud Functions.
+
+
+Important best practice
+-----------------------
+Do not trust client-side scores for serious grading.
+
+Better approach:
+1. student submits selectedAnswers
+2. backend / Cloud Function reads correct answers
+3. backend calculates score
+4. backend writes result documents
+
+This prevents students from tampering with scores.
+
+
+Suggested result write flow later
+---------------------------------
+1. user finishes quiz
+2. app sends:
+   - quizCode
+   - selectedAnswers
+   - startedAt
+   - submittedAt
+3. backend calculates:
+   - score
+   - percentage
+4. backend stores under:
+   - users/{uid}/attemptedQuizzes/{attemptId}
+   - optionally quizAttempts/{attemptId}
+
+
+Minimal fields to store now
+---------------------------
+quizCode
+quizTitle
+score
+totalQuestions
+percentage
+startedAt
+submittedAt
+selectedAnswers
+
+
+If you want later
+-----------------
+I can next implement:
+1. secure result saving to Firestore
+2. student result history screen from Firebase
+3. admin result viewer by quiz code

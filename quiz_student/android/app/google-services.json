@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "416138549404",
+    "project_id": "caquizapp-29419",
+    "storage_bucket": "caquizapp-29419.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416138549404:android:83fe85f71e565573587559",
+        "android_client_info": {
+          "package_name": "com.example.quiz_admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416138549404-vl4rbl86dol2cvmh0r5kuqufvgvhfk65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqpN6_ETmvCjNGEh-DrL9hWdXwE7yB3YU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416138549404-vl4rbl86dol2cvmh0r5kuqufvgvhfk65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416138549404:android:98580f564bdc328f587559",
+        "android_client_info": {
+          "package_name": "com.example.quiz_student"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416138549404-e15u1nh02fncsugq6t0melsh6sh54g9h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quiz_student",
+            "certificate_hash": "9ef904a5d6ef4361bf078c16991c93afb4bd0e75"
+          }
+        },
+        {
+          "client_id": "416138549404-vl4rbl86dol2cvmh0r5kuqufvgvhfk65.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqpN6_ETmvCjNGEh-DrL9hWdXwE7yB3YU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416138549404-vl4rbl86dol2cvmh0r5kuqufvgvhfk65.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
