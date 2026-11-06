@@ -1,15 +1,29 @@
-# **Quiz App - Comprehensive Quiz Management System**
+<div align="center">
+
+# 🎓 Quiz App
+
+### A modern, dual-app quiz platform built with Flutter & Firebase
 
 [![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev/)
 [![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev/)
 [![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)](https://firebase.google.com/)
+[![Firestore](https://img.shields.io/badge/Firestore-%23FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/docs/firestore)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://www.android.com/)
 [![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white)](https://www.apple.com/ios/)
 
+A robust ecosystem for creating, taking, and evaluating quizzes — with a clean
+student experience and powerful administrator tooling.
+
+</div>
+
+---
+
 ## **Introduction**
+
 The **Quiz App** is a robust, dual-application ecosystem designed to streamline the process of quiz creation, management, and evaluation. Built with **Flutter** and **Firebase**, it provides a seamless experience for both administrators and students. The project is split into two main components:
-1.  **Quiz Student**: A public-facing mobile application for students to participate in quizzes and track their progress.
-2.  **Quiz Admin**: A private, high-level management tool for administrators to design quizzes and analyze results.
+
+1. **Quiz Student**: A public-facing mobile application for students to participate in quizzes and track their progress.
+2. **Quiz Admin**: A private, high-level management tool for administrators to design quizzes and analyze results.
 
 ---
 
@@ -30,12 +44,55 @@ The **Quiz App** is a robust, dual-application ecosystem designed to streamline 
 
 ---
 
+## **Screenshots**
+
+### 🎓 Quiz Student App
+
+| Login | Create Account | Verify Email |
+|:---:|:---:|:---:|
+| <img src="images/SLogin.png" width="220" /> | <img src="images/SCreateAccount.png" width="220" /> | <img src="images/SVerification.png" width="220" /> |
+| *Sign in securely* | *Register a new account* | *Email verification* |
+
+| Student Dashboard | Join Quiz by Code | Taking a Quiz |
+|:---:|:---:|:---:|
+| <img src="images/StudentDashboard.png" width="220" /> | <img src="images/enterquizcode.png" width="220" /> | <img src="images/Squestion2.png" width="220" /> |
+| *Overview of available quizzes* | *Enter an admin-generated code* | *Answer questions in real time* |
+
+| Quiz Results |
+|:---:|
+| <img src="images/STestresult.png" width="220" /> |
+| *Instant score with answer breakdown* |
+
+### 🛠️ Quiz Admin App
+
+| Admin Dashboard | Create a New Quiz | Quiz History |
+|:---:|:---:|:---:|
+| <img src="images/AdminDashboard.png" width="220" /> | <img src="images/createnewquiz.png" width="220" /> | <img src="images/Quizhistory.png" width="220" /> |
+| *Centralized management hub* | *Build quizzes with multiple questions* | *Browse and review past quizzes* |
+
+> **Note:** All screenshots live in the [images/](images/) folder.
+
+---
+
+## **Tech Stack**
+
+| Layer | Technology |
+|:---|:---|
+| **Framework** | Flutter (Dart) |
+| **Authentication** | Firebase Auth (Email, Google Sign-In) |
+| **Database** | Cloud Firestore (real-time sync) |
+| **Platforms** | Android, iOS, Web, macOS, Windows, Linux |
+
+---
+
 ## **The Process**
+
 Building this project involved several key stages:
-1.  **Requirement Analysis**: Identifying the distinct needs of students (ease of use) vs. admins (powerful tools).
-2.  **Architectural Design**: Deciding on a dual-app structure sharing a unified Firebase backend for data consistency.
-3.  **UI/UX Development**: Creating a minimalist yet functional design using Flutter's Material Design components.
-4.  **Backend Integration**: Implementing Firebase Authentication for security and Firestore for real-time data management.
+
+1. **Requirement Analysis**: Identifying the distinct needs of students (ease of use) vs. admins (powerful tools).
+2. **Architectural Design**: Deciding on a dual-app structure sharing a unified Firebase backend for data consistency.
+3. **UI/UX Development**: Creating a minimalist yet functional design using Flutter's Material Design components.
+4. **Backend Integration**: Implementing Firebase Authentication for security and Firestore for real-time data management.
 
 ### **Challenges & Learning**
 *   **Real-time Synchronization**: Managing state across multiple devices during a live quiz.
@@ -59,32 +116,31 @@ Building this project involved several key stages:
 *   A [Firebase Project](https://console.firebase.google.com/) set up.
 
 ### **Installation**
-1.  **Clone the repository:**
+
+1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/quiz-app.git
-    cd quiz-app
+    git clone https://github.com/CoderShaji/QuizApp.git
+    cd QuizApp
     ```
 
-2.  **Setup Quiz Student:**
+2. **Setup Quiz Student:**
     ```bash
     cd quiz_student
     flutter pub get
     ```
 
-3.  **Firebase Configuration:**
+3. **Firebase Configuration:**
     *   Add your `google-services.json` (for Android) and `GoogleService-Info.plist` (for iOS) to the respective directories in `quiz_student`.
 
-4.  **Run the application:**
+4. **Run the application:**
     ```bash
     flutter run
     ```
 
 ---
 
-## **Visual Preview**
-| Quiz Student Dashboard | Quiz Admin Interface |
-|:---:|:---:|
-| ![Student Dashboard](images/student_dashboard.png) | ![Admin Dashboard](images/admin_dashboard.png) |
-| *Student interface for accessing quizzes* | *Admin dashboard for management* |
+<div align="center">
 
-*Note: For more screenshots, please refer to the [images/](images/) folder.*
+Made with ❤️ using Flutter & Firebase
+
+</div>
