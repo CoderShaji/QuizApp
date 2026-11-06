@@ -18,6 +18,12 @@ student experience and powerful administrator tooling.
 
 ---
 
+> [!IMPORTANT]
+> **🚧 Project Status: Work in Progress.**
+> This project is **not yet complete**. The **Results module** has not been finished, so quiz result calculation, scoring, and performance analytics are still under development. Some screens and features shown below may be partial or subject to change.
+
+---
+
 ## **Introduction**
 
 The **Quiz App** is a robust, dual-application ecosystem designed to streamline the process of quiz creation, management, and evaluation. Built with **Flutter** and **Firebase**, it provides a seamless experience for both administrators and students. The project is split into two main components:
@@ -33,7 +39,7 @@ The **Quiz App** is a robust, dual-application ecosystem designed to streamline 
 *   **Secure Authentication**: Full login, signup, and email verification flow powered by Firebase Auth.
 *   **Code-Based Access**: Students join specific quizzes using unique, admin-generated codes.
 *   **Interactive Quiz Engine**: A clean, distraction-free interface for taking quizzes with real-time progress tracking.
-*   **Performance Analytics**: Instant results post-quiz with detailed breakdowns of correct and incorrect answers.
+*   **Performance Analytics** *(in progress)*: Post-quiz results with answer breakdowns — the results module is not yet complete.
 *   **Account Management**: Secure password reset and profile management features.
 
 ### **🛠️ Quiz Admin (Private)**
@@ -61,7 +67,7 @@ The **Quiz App** is a robust, dual-application ecosystem designed to streamline 
 | Quiz Results |
 |:---:|
 | <img src="images/STestresult.png" width="220" /> |
-| *Instant score with answer breakdown* |
+| *Results screen (module in progress)* |
 
 ### 🛠️ Quiz Admin App
 
@@ -102,6 +108,7 @@ Building this project involved several key stages:
 ---
 
 ## **Room for Improvement**
+*   [ ] **Complete the Results Module**: Finish end-to-end result calculation, scoring, and reporting.
 *   [ ] **Leaderboards**: Implement a competitive ranking system for students.
 *   [ ] **Multimedia Questions**: Support for images and videos within quiz questions.
 *   [ ] **Offline Mode**: Enable quiz taking without a stable internet connection using local caching.
