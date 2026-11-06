@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show TargetPlatform, defaultTargetPlatform, kIsWeb;
 
+// Firebase configuration is loaded from build-time environment variables.
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
@@ -23,21 +24,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCEUE_DkH1AujUPho93CH4vCpMlR8pxjLg',
-    appId: '1:416138549404:web:e5cae450bf1dc996587559',
-    messagingSenderId: '416138549404',
-    projectId: 'caquizapp-29419',
-    authDomain: 'caquizapp-29419.firebaseapp.com',
-    storageBucket: 'caquizapp-29419.firebasestorage.app',
-    measurementId: 'G-RBVZVS4LMB',
+    apiKey: String.fromEnvironment('FIREBASE_WEB_API_KEY'),
+    appId: String.fromEnvironment('FIREBASE_WEB_APP_ID'),
+    messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGING_SENDER_ID'),
+    projectId: String.fromEnvironment('FIREBASE_PROJECT_ID'),
+    authDomain: String.fromEnvironment('FIREBASE_AUTH_DOMAIN'),
+    storageBucket: String.fromEnvironment('FIREBASE_STORAGE_BUCKET'),
+    measurementId: String.fromEnvironment('FIREBASE_MEASUREMENT_ID'),
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDqpN6_ETmvCjNGEh-DrL9hWdXwE7yB3YU',
-    appId: '1:416138549404:android:98580f564bdc328f587559',
-    messagingSenderId: '416138549404',
-    projectId: 'caquizapp-29419',
-    storageBucket: 'caquizapp-29419.firebasestorage.app',
+    apiKey: String.fromEnvironment('FIREBASE_ANDROID_API_KEY'),
+    appId: String.fromEnvironment('FIREBASE_ANDROID_APP_ID'),
+    messagingSenderId: String.fromEnvironment('FIREBASE_MESSAGING_SENDER_ID'),
+    projectId: String.fromEnvironment('FIREBASE_PROJECT_ID'),
+    storageBucket: String.fromEnvironment('FIREBASE_STORAGE_BUCKET'),
   );
-
 }
